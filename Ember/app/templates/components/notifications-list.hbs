@@ -1,0 +1,21 @@
+<div class="notificationscenter">
+  <div class="notificationscenter__header">
+    <h2>Notifications</h2>
+
+    <a href="#" {{action "clearAll"}}>Clear All</a>
+  </div>
+
+  <div class="notificationscenter__list">
+    {{#each-in groupedPain as |therapy_session_id group|}}
+      {{notifications-pain group=group removeGroup=(action "removeGroup" group)}}
+    {{/each-in}}
+
+    {{#each-in groupedAssessment as |patient_id group|}}
+      {{notifications-assessment group=group removeGroup=(action "removeGroup" group)}}
+    {{/each-in}}
+
+    {{#each groupedExerciseTrouble as |notification|}}
+      {{notifications-item notification=notification removeItem=(action "removeItem")}}
+    {{/each}}
+  </div>
+</div>

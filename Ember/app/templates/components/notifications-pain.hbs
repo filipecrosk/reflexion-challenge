@@ -1,0 +1,15 @@
+<div class="notificationscenter__item notificationscenter__item-event_pain">
+  <div class="notificationscenter__icon">
+    <i class="fa fa-exclamation-triangle"></i>
+  </div>
+  <div class="notificationscenter__content" {{action "goToItem"}}>
+    <h3 class="notificationscenter__content_title">{{patients.lastObject}}</h3>
+    <p class="notificationscenter__content_text">
+      Reported pain {{h-pluralize group.length "time"}} with highest pain {{highestPain}}
+    </p>
+    <span class="notificationscenter__content_data">{{moment-format group.lastObject.timestamp "MMMM DD \a\t h:mmA"}}</span>
+  </div>
+  <a href="#" class="notificationscenter__close" {{action "removeItem"}}>
+    x
+  </a>
+</div>

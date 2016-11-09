@@ -1,0 +1,13 @@
+<div class="notificationscenter__item notificationscenter__item-{{notification.type}}">
+  <div class="notificationscenter__icon">
+    <i class="fa fa-{{iconType}}"></i>
+  </div>
+  <div class="notificationscenter__content" {{action "goToItem"}}>
+    <h3 class="notificationscenter__content_title">{{notification.patient_name}}</h3>
+    <p class="notificationscenter__content_text">{{notification.message}}</p>
+    <span class="notificationscenter__content_data">{{moment-format notification.timestamp "MMMM DD \a\t h:mmA"}}</span>
+  </div>
+  <a href="#" class="notificationscenter__close" {{action "removeItem"}}>
+    x
+  </a>
+</div>
